@@ -177,6 +177,6 @@ class WallServiceTest {
             postponedId = 0
         )
         val result = WallService.update(update)
-        assertFalse(!result)
+        assertFalse(result)
     }
 }
