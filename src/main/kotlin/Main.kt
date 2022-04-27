@@ -8,19 +8,13 @@ fun main() {
         replyOwnerId = 0 ,
         replyPostId = 0 ,
         friendsOnly = false ,
-        comments = Comment(
-            text = "" ,
-            count = 0 ,
-            canPost = false ,
-            groupsCanPost = false ,
-            canClose = false ,
-            canOpen = false
-        ) ,
+        comments = "" ,
         copyright = "" ,
         likes = 2 ,
-        reposts = Reposts(count = 0 , userReposted = true) ,
+        reposts = null ,
         views = 2 ,
         postType = "" ,
+        attachments = emptyList()
         signerId = 0 ,
         canPin = false ,
         canDelete = false ,
