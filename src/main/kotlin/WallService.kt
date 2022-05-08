@@ -24,13 +24,13 @@ object WallService {
         for ((index , value) in posts.withIndex()) {
             println("Значение индекса $index содержимое $value")
             println("\tвложения:")
-            for (att: Attachment in value.attachments) {
+            for (att: Attachment in value.attachments!!) {
                 when (att.type) {
-                    "Note" -> println("\t\tNote")
-                    "Photo" -> println("\t\tPhoto")
-                    "Document" -> println("\t\tDocument")
-                    "Audio" -> println("\t\tAudio")
-                    "Video" -> println("\t\tVideo")
+                    "note" -> println("\t\tNote")
+                    "photo" -> println("\t\tPhoto")
+                    "document" -> println("\t\tDocument")
+                    "audio" -> println("\t\tAudio")
+                    "video" -> println("\t\tVideo")
                     else -> println("\t\tunknown")
                 }
             }

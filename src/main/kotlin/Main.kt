@@ -1,6 +1,6 @@
 fun main() {
     val firstPost = Post(
-        ownerId = 485 ,
+        ownerId = 549 ,
         fromId = 10 ,
         createdBy = 554 ,
         date = 2022_04_05 ,
@@ -14,7 +14,11 @@ fun main() {
         reposts = null ,
         views = 2 ,
         postType = "" ,
-        attachments = emptyList() ,
+        attachments = listOf(
+            AudioAttachment(
+                audio = Audio(25 , 45 , "Bob" , "Bobby" , 25)
+            )
+        ) ,
         signerId = 0 ,
         canPin = false ,
         canDelete = false ,
@@ -40,14 +44,7 @@ fun main() {
         reposts = null ,
         views = 0 ,
         postType = "" ,
-        attachments = listOf(
-            Note(
-                1 , 123 , "Note1" , "First note" , 2022_04_28 , 1
-            ) ,
-            Document(
-                22 , 123 , "Manual" , 55 , "www.netology.ru" , 2022_04_27
-            )
-        ) ,
+        attachments = emptyList() ,
         signerId = 0 ,
         canPin = false ,
         canDelete = false ,
@@ -73,10 +70,10 @@ fun main() {
         reposts = null ,
         views = 18 ,
         postType = "" ,
-        attachments = listOf<Attachment>(
-            Photo(111 , 121 , 559 , 13 , "Photo" , 2022_04_27) ,
-            Video(25 , 222 , "Video" , "My video" , 353 , 2022_04_25 , 38) ,
-            Note(256 , 125 , "Note2" , "My note" , 2022_04_18 , 0)
+        attachments = listOf(
+            VideoAttachment(
+                video = Video(12 , 25 , "Video" , "My Video" , 62)
+            )
         ) ,
         signerId = 0 ,
         canPin = false ,
@@ -89,7 +86,7 @@ fun main() {
     )
 
     val updatePost = Post(
-        id = 3 ,
+        id = 2 ,
         ownerId = 485 ,
         fromId = 148 ,
         createdBy = 1025 ,
@@ -104,7 +101,17 @@ fun main() {
         reposts = null ,
         views = 48 ,
         postType = "" ,
-        attachments = emptyList() ,
+        attachments = listOf(
+            DocumentAttachment(
+                document = Document(12,23,"Document",23)
+            ),
+            PhotoAttachment(
+                photo = Photo(27,15,48,78,"My photo")
+            ),
+            NoteAttachment(
+                note = Note(12,12,"Note","My note",12)
+            )
+        ) ,
         signerId = 0 ,
         canPin = false ,
         canDelete = false ,

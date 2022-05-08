@@ -80,7 +80,9 @@ class WallServiceTest {
             reposts = null ,
             views = 18 ,
             postType = "" ,
-            attachments = listOf(Photo(123, 333, 15, 17, "Color", 2022_04_29 )) ,
+            attachments = listOf(VideoAttachment(
+                video = Video(12 , 25 , "Video" , "My Video" , 62)
+            )) ,
             signerId = 0 ,
             canPin = false ,
             canDelete = false ,
