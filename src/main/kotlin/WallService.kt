@@ -1,6 +1,30 @@
 object WallService {
     private var posts = mutableListOf<Post>()
     private var lastId = 1
+    private var comments = mutableListOf<Comment>()
+
+    fun createComment(comment: Comment): Boolean {
+        for (post: Post in posts) {
+            if (post.id == comment.postId) {
+                comments.add(comment)
+                return true
+            }
+        }
+        return false
+    }
+
+    fun checkingCommentCreation(comment: Comment): Boolean {
+        if (!createComment(comment)) {
+            throw PostNotFoundException("Поста с таким Id не существует!")
+        }
+        return true
+    }
+
+    fun printComments() {
+        for ((index, value) in comments.withIndex()) {
+            println("Значение индекса $index содержимое $value")
+        }
+    }
 
     fun add(post: Post): Post {
         post.id = lastId++

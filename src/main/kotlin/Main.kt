@@ -8,7 +8,7 @@ fun main() {
         replyOwnerId = 0 ,
         replyPostId = 0 ,
         friendsOnly = false ,
-        comments = "" ,
+        comments = emptyList() ,
         copyright = "" ,
         likes = 2 ,
         reposts = null ,
@@ -38,7 +38,7 @@ fun main() {
         replyOwnerId = 0 ,
         replyPostId = 0 ,
         friendsOnly = false ,
-        comments = "" ,
+        comments = emptyList() ,
         copyright = "" ,
         likes = 0 ,
         reposts = null ,
@@ -64,7 +64,7 @@ fun main() {
         replyOwnerId = 0 ,
         replyPostId = 0 ,
         friendsOnly = false ,
-        comments = "" ,
+        comments = emptyList() ,
         copyright = "" ,
         likes = 102 ,
         reposts = null ,
@@ -95,7 +95,7 @@ fun main() {
         replyOwnerId = 0 ,
         replyPostId = 0 ,
         friendsOnly = false ,
-        comments = "" ,
+        comments = emptyList() ,
         copyright = "" ,
         likes = 148 ,
         reposts = null ,
@@ -103,13 +103,13 @@ fun main() {
         postType = "" ,
         attachments = listOf(
             DocumentAttachment(
-                document = Document(12,23,"Document",23)
-            ),
+                document = Document(12 , 23 , "Document" , 23)
+            ) ,
             PhotoAttachment(
-                photo = Photo(27,15,48,78,"My photo")
-            ),
+                photo = Photo(27 , 15 , 48 , 78 , "My photo")
+            ) ,
             NoteAttachment(
-                note = Note(12,12,"Note","My note",12)
+                note = Note(12 , 12 , "Note" , "My note" , 12)
             )
         ) ,
         signerId = 0 ,
@@ -122,6 +122,10 @@ fun main() {
         postponedId = 0
     )
 
+    val firstComment = Comment(11 , 1 , 2022_05_09 , "Первый комментарий." , emptyList())
+    val secondComment = Comment(22 , 2 , 2022_05_10 , "Второй комментарий" , emptyList())
+    val thirdComment = Comment(33 , 3 , 2022_05_11 , "Третий комментарий" , emptyList())
+    val fourthComment = Comment(44 , 4 , 2022_05_12 , "Четвертый комментарий" , emptyList())
 
     WallService.add(firstPost)
     WallService.add(secondPost)
@@ -129,4 +133,9 @@ fun main() {
     WallService.update(updatePost)
     WallService.printPosts()
 
+    WallService.checkingCommentCreation(firstComment)
+    WallService.checkingCommentCreation(secondComment)
+    WallService.checkingCommentCreation(thirdComment)
+    WallService.printComments()
+    WallService.checkingCommentCreation(fourthComment)
 }
